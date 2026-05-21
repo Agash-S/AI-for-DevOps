@@ -86,18 +86,22 @@ ollama serve
 
 ---
 
-## Pull Llama Model - Size of this model is 5gb and require 8gb ram machine to run smoothly, switch to smaller model if your laptop has low compute, higher the size of the model better the result and consistent output.
+## Pull the Model 
 
+For better Dockerfile generation quality, larger models generally produce more consistent and accurate results.
+
+Recommended model:
 ```bash
 ollama pull huggingface.co/bartowski/qwen2.5-7b-instruct-gguf
 ```
+⚠️ This model is around 5GB and works best on machines with at least 8GB RAM.
 
-Alternative models: - Small models
-
+For low-spec systems, use smaller models:
 ```bash
 ollama pull qwen2.5-coder:1.5b
 ollama pull llama3.2:1b
 ```
+Smaller models are faster and lightweight, but output quality may vary.
 
 ---
 
@@ -180,13 +184,14 @@ pip install -r requirements.txt
 
 ---
 
-# ▶️ Run the Application - It will definitely take some time for low compute machines for Ollama Version.
+# ▶️ Run the Application
 
 ## Run Ollama Version
 
 ```bash
 python3 generate_dockerfile_ollama.py
 ```
+⏳ Initial response generation may take longer on low-compute machines, especially when using larger LLM models locally with Ollama.
 
 ---
 
@@ -201,7 +206,6 @@ python3 generate_dockerfile_gemini.py
 # 🧪 Example Usage
 
 ```bash
-Enter programming language: python
 Enter programming language: python
 # Generated Dockerfile will be displayed...
 ```
